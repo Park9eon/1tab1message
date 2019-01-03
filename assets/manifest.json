@@ -1,0 +1,11 @@
+{
+  "name": "Example",
+  "version": "1.0",
+  "description": "Example",
+  "homepage_url": "https://park9eon.com",
+  "manifest_version": 2,
+  "permissions": [],
+  "background": {
+    "scripts": ["index.js"]
+  }
+}
