@@ -10,7 +10,8 @@ const CopyWebpackPlugin = require('copy-webpack-plugin'); // eslint-disable-line
 module.exports = (env, argv) => ({
     mode: 'development',
     entry: {
-        index: './src/index'
+        message: './src/message.js',
+        background: './src/background.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),

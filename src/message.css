@@ -1,0 +1,17 @@
+.messageWrapper {
+    width: 200px;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    background: red;
+    z-index: 9999;
+}
+
+.message {
+    margin: 16px;
+}
+
+.messageText {
+    font-size: 1rem;
+    color: green;
+}

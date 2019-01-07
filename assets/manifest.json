@@ -4,8 +4,15 @@
   "description": "Example",
   "homepage_url": "https://park9eon.com",
   "manifest_version": 2,
-  "permissions": [],
+  "permissions": [
+    "tabs",
+    "activeTab",
+    "storage",
+    "<all_urls>"
+  ],
   "background": {
-    "scripts": ["index.js"]
+    "scripts": [
+      "background.js"
+    ]
   }
 }
