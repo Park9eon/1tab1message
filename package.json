@@ -1,6 +1,6 @@
 {
   "name": "1-tab-1-message",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "author": "Park9eon",
   "license": "MIT",
   "private": true,
@@ -20,6 +20,8 @@
     "chrome-launcher": "^0.10.5",
     "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^2.1.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "web-ext": "^2.9.2",
     "webpack": "^4.28.3",

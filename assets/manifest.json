@@ -1,7 +1,7 @@
 {
-  "name": "Example",
-  "version": "1.0",
-  "description": "Example",
+  "name": "1Tab1Message",
+  "version": "0.0.1",
+  "description": "탭을 열면 메시지가 나옵니다.",
   "homepage_url": "https://park9eon.com",
   "manifest_version": 2,
   "permissions": [
@@ -14,5 +14,10 @@
     "scripts": [
       "background.js"
     ]
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false,
+    "chrome_style": true
   }
 }

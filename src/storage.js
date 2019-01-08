@@ -6,20 +6,24 @@
 
 export default {
     getMessageList(callback) {
-        console.log(chrome);
-        chrome.storage.local.get(['messageList'], ({messageList}) => {
+        chrome.storage.local.get(['messageList'], ({messageList = ["메시지를 입력해주세요."]}) => {
+            console.log(messageList);
             callback(messageList);
         });
     },
     addMessage(message, callback) {
-        this.getMessageList((messageList = []) => {
+        this.getMessageList((messageList) => {
             messageList.push(message);
-            chrome.storage.local.set({ messageList }, callback);
+            this.saveMessageList(messageList, callback);
         })
     },
+    saveMessageList(messageList, callback) {
+        chrome.storage.local.set({ messageList }, callback);
+    },
     randomMessage(callback) {
-        this.getMessageList((messageList = ['메세지를 입력해주세요.']) => {
-            callback(messageList[Math.floor(Math.random() * messageList.length)]);
+        this.getMessageList((messageList) => {
+            const message = messageList[Math.floor(Math.random() * messageList.length)];
+            callback(message);
         });
     }
 }

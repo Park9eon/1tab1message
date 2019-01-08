@@ -4,24 +4,47 @@
  * Created by park9eon on 2019-01-07
  */
 
-import {h, render} from 'preact';
+import {Component, h, render} from 'preact';
 import storage from './storage';
-import './message.css';
+import './message.scss';
 
-const Message = ({message}) => (
-    <div className="messageWrapper">
-        <div className="message">
-            <span className="messageText">{message}</span>
-        </div>
-    </div>
-);
+const timeout = 3000;
+const animationDuration = 1000;
+
+class Message extends Component {
+    constructor(props) {
+        super(props);
+        this.state.visibility = false;
+        this.onClose = this.onClose.bind(this);
+    }
+
+    componentDidMount() {
+        this.setState({visibility: true});
+        setTimeout(() => {
+            this.onClose();
+        }, timeout - animationDuration);
+    }
+
+    onClose() {
+        this.setState({visibility: false});
+    }
+
+    render({message}, {visibility}, context) {
+        return (
+            <div className={visibility ? "messageWrapper show" : "messageWrapper hide"}
+                 style={{animationDuration}}
+                 onClick={this.onClose}>
+                <p className="message">{message}</p>
+            </div>
+        );
+    }
+}
 
 storage.randomMessage((message) => {
     const messageDOM = render((
         (<Message message={message}/>)
     ), document.body);
-
     setTimeout(() => {
-        messageDOM.parentNode.removeChild(messageDOM);
-    }, 10000);
+        messageDOM && messageDOM.parentNode.removeChild(messageDOM);
+    }, timeout);
 });

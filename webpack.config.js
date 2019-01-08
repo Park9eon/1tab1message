@@ -11,7 +11,8 @@ module.exports = (env, argv) => ({
     mode: 'development',
     entry: {
         message: './src/message.js',
-        background: './src/background.js'
+        background: './src/background.js',
+        options: './src/options.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -24,8 +25,8 @@ module.exports = (env, argv) => ({
     },
     module: {
         rules: [{
-            test: /\.css$/,
-            use: ['style-loader', 'css-loader'],
+            test: /\.scss$/,
+            use: ['style-loader', 'css-loader', 'sass-loader'],
         }, {
             test: /\.js$/,
             exclude: /(node_modules)/,
