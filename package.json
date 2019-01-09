@@ -1,6 +1,6 @@
 {
   "name": "1-tab-1-message",
-  "version": "0.0.1-beta",
+  "version": "0.0.2-beta",
   "author": "Park9eon",
   "license": "MIT",
   "private": true,
@@ -9,7 +9,8 @@
     "open:chrome": "node scripts/chrome-launcher.js --chromePath /Applications/Chrome.app/Contents/MacOS/Google\\ Chrome",
     "open:whale": "node scripts/chrome-launcher.js --chromePath /Applications/Whale.app/Contents/MacOS/Whale",
     "watch": "webpack --watch --mode=development",
-    "build": "webpack --mode=production"
+    "build": "webpack --mode=production",
+    "compress:firefox": "yarn build && web-ext lint --source-dir ./dist/ && web-ext build --source-dir ./dist/"
   },
   "devDependencies": {
     "@babel/cli": "^7.2.3",
