@@ -1,55 +1,55 @@
 $messageWidth: 420px;
 
 @keyframes slide-in-right {
-    to {
-        transform: translateX(0);
-    }
+  to {
+    transform: translateX(0);
+  }
 }
 
 @keyframes slide-in-right {
-    to {
-        transform: translateX(0);
-    }
-}
-
-@keyframes slide-in-left {
-    to {
-        transform: translateX($messageWidth + 16px);
-    }
-}
-
-@keyframes slide-in-left {
-    to {
-        transform: translateX($messageWidth + 16px);
-    }
-}
-
-.messageWrapper {
-    width: $messageWidth;
-    box-shadow: 0 5px 11px 0 rgba(0,0,0,.18),0 4px 15px 0 rgba(0,0,0,.15);
-    outline: 0;
-    z-index: 9999;
-    position: fixed;
-    top: 16px;
-    right: 16px;
-    color: #fff;
-    background-color: #00c851;
-    border-color: #1e7e34;
-}
-
-.messageWrapper.show {
-    transform: translateX($messageWidth);
-    animation: slide-in-right 1s ease-in-out forwards, slide-in-right 1s ease-in-out reverse forwards 3s;
-}
-
-.messageWrapper.hide {
-    animation: slide-in-left 1s ease-in-out forwards, slide-in-left 1s ease-in-out reverse forwards 3s;
+  to {
     transform: translateX(0);
+  }
 }
 
-.message {
-    margin: 16px;
-    padding: 0;
-    font-size: 16px;
-    font-weight: bold;
+@keyframes slide-in-left {
+  to {
+    transform: translateX($messageWidth + 16px);
+  }
+}
+
+@keyframes slide-in-left {
+  to {
+    transform: translateX($messageWidth + 16px);
+  }
+}
+
+.otom-messageWrapper {
+  width: $messageWidth;
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, .18), 0 4px 15px 0 rgba(0, 0, 0, .15);
+  outline: 0;
+  z-index: 9999;
+  position: fixed;
+  top: 16px;
+  right: 16px;
+  color: #fff;
+  background-color: #00c851;
+  border-color: #1e7e34;
+}
+
+.otom-messageWrapper.show {
+  transform: translateX($messageWidth);
+  animation: slide-in-right 1s ease-in-out forwards, slide-in-right 1s ease-in-out reverse forwards 3s;
+}
+
+.otom-messageWrapper.hide {
+  animation: slide-in-left 1s ease-in-out forwards, slide-in-left 1s ease-in-out reverse forwards 3s;
+  transform: translateX(0);
+}
+
+.otom-ms-message {
+  margin: 16px;
+  padding: 0;
+  font-size: 16px;
+  font-weight: bold;
 }

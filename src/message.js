@@ -31,10 +31,10 @@ class Message extends Component {
 
     render({message}, {visibility}, context) {
         return (
-            <div className={visibility ? "messageWrapper show" : "messageWrapper hide"}
+            <div className={visibility ? "otom-messageWrapper show" : "otom-messageWrapper hide"}
                  style={{animationDuration}}
                  onClick={this.onClose}>
-                <p className="message">{message}</p>
+                <p className="otom-message">{message}</p>
             </div>
         );
     }
